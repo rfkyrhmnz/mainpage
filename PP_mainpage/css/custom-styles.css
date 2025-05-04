@@ -1,0 +1,248 @@
+custom-styles.css
+/* custom-styles.css - Add this as a new file */
+
+/* =================== */
+/* 1. GLOBAL STYLES   */
+/* =================== */
+:root {
+  --primary-color: #2c7db5;
+  --primary-dark: #1a6692;
+  --accent-color: #e74c3c;
+  --text-color: #333333;
+  --text-light: #c3c3c3;
+  --bg-light: #f5f5f5;
+  --bg-dark: #333333;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* =================== */
+/* 2. HEADER STYLES   */
+/* =================== */
+.tm-header {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.tm-site-name {
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color var(--transition-speed) ease;
+}
+
+.tm-site-name:hover {
+  color: var(--primary-color);
+}
+
+.tm-nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tm-nav li {
+  margin-left: 20px;
+}
+
+.tm-nav a {
+  position: relative;
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.tm-nav a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.tm-nav a:hover:after,
+.tm-nav a.active:after {
+  width: 100%;
+}
+
+/* =================== */
+/* 3. BANNER STYLES   */
+/* =================== */
+.tm-banner-inner {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 5px;
+  max-width: 500px;
+}
+
+.tm-banner-title {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.tm-banner-subtitle {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.tm-banner-link {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.tm-banner-link:hover {
+  background-color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* =================== */
+/* 4. CARD STYLES     */
+/* =================== */
+.site-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.site-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.site-card-image {
+  overflow: hidden;
+  margin: 0;
+}
+
+.site-card-image img {
+  transition: transform var(--transition-speed) ease;
+  width: 100%;
+}
+
+.site-card:hover .site-card-image img {
+  transform: scale(1.05);
+}
+
+.site-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-name {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.location-text {
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.tm-home-box-2-link {
+  margin-top: auto;
+  display: inline-block;
+}
+
+.tm-home-box-2-description {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.tm-home-box-2-link:hover .tm-home-box-2-description {
+  background-color: var(--primary-dark);
+}
+
+/* =================== */
+/* 5. SECTION STYLES  */
+/* =================== */
+.tm-section-header {
+  margin-bottom: 40px;
+}
+
+.tm-section-title {
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  margin: 0;
+}
+
+/* =================== */
+/* 6. FOOTER STYLES   */
+/* =================== */
+.tm-black-bg {
+  background-color: var(--bg-dark);
+  color: white;
+  padding: 20px 0;
+}
+
+.tm-copyright-text {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* =================== */
+/* 7. RESPONSIVE      */
+/* =================== */
+@media (max-width: 991px) {
+  .site-cards > div {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tm-banner-title {
+    font-size: 28px;
+  }
+  
+  .tm-banner-subtitle {
+    font-size: 16px;
+  }
+  
+  .tm-section-title {
+    font-size: 24px;
+  }
+  
+  .tm-banner-inner {
+    padding: 20px;
+  }
+}
